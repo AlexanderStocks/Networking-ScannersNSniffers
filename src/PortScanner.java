@@ -13,6 +13,12 @@ public class PortScanner {
 
   private String ipAddress = "";
 
+  public static void main(String[] args) {
+    //instructions here
+    PortScanner scan = new PortScanner("8.8.8.8", 1, 150, true);
+    scan.startScan();
+  }
+
   public PortScanner(String ipAddress, int portNum) {
     this.ipAddress = ipAddress;
     this.higherPort = portNum;
@@ -54,9 +60,32 @@ public class PortScanner {
     return true;
   }
 
+  public int getLowerPort() {
+    return lowerPort;
+  }
 
+  public int getHigherPort() {
+    return higherPort;
+  }
 
+  public String getIpAddress() {
+    return ipAddress;
+  }
 
+  public void setLowerPort(int lowerPort) {
+    this.lowerPort = lowerPort;
+  }
 
+  public void setHigherPort(int higherPort) {
+    this.higherPort = higherPort;
+  }
+
+  public void setIpAddress(String ipAddress) {
+    this.ipAddress = ipAddress;
+  }
+
+  public void setIncludeClosedPort(boolean includeClosedPort) {
+    this.includeClosedPort = includeClosedPort;
+  }
 }
 
