@@ -1,4 +1,5 @@
 
+import java.io.IOException;
 import java.net.*;
 
 public class PortScanner {
@@ -41,6 +42,18 @@ public class PortScanner {
       }
     }
   }
+
+  public boolean isPortOpen(String ipAddress, int portNum) {
+    try {
+      Socket socket = new Socket();
+      socket.connect(new InetSocketAddress(ipAddress, portNum), TIMEOUT);
+      socket.close();
+    } catch (IOException e) {
+      return false;
+    }
+    return true;
+  }
+
 
 
 
