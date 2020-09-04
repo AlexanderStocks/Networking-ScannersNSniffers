@@ -30,6 +30,19 @@ public class PortScanner {
 
   }
 
+  public void startScan() {
+    for (int i = 0; i <= higherPort; i++) {
+      boolean portState = isPortOpen(ipAddress, i);
+
+      if (portState) {
+        System.out.println("Port: " + i + " is open.");
+      } else if (includeClosedPort) {
+        System.out.println("Port: " + i + " is open.");
+      }
+    }
+  }
+
+
 
 
 }
